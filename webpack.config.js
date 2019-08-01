@@ -6,6 +6,7 @@ module.exports = {
     entry: [
         "babel-polyfill",
         path.join(__dirname, './src/main.js')
+        // path.join(__dirname, './src/lib/index.js')
     ],
     output: {
         path: path.join(__dirname, './dist'),

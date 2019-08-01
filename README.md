@@ -1,21 +1,18 @@
 # vue-form-create
 
-> A Vue.js project
+> Vue动态生成表单组件 可以根据数据配置表单 使用的UI库是element ui，
+    数据驱动表单，使用Vue的render函数
 
-## Build Setup
+## 项目运行
 
 ``` bash
-# install dependencies
+git clone https://github.com/linguokang/vue-form-create.git
+
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:8018
+npm start
 
-# build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
