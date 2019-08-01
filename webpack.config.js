@@ -15,9 +15,19 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: ['babel-loader'],
+                // use: ['babel-loader'],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        cacheDirectory: true
+                    }
+                },
                 include: path.join(__dirname , 'src'),
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.vue$/,
@@ -39,12 +49,14 @@ module.exports = {
                 }
               },
               {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                  name: '[name].[ext]?[hash]'
+                    test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+                    use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000
+                    }
+                    }]
                 }
-              }
         ]
     },
     mode: 'development',
